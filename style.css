@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+input {
+    margin: 10px;
+}
+
+pre {
+    white-space: pre-wrap; /* Mantém a formatação do texto */
+    margin-top: 20px;
+}
+
+main {min-height: 100vh;
+    color: black;
+}

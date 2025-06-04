@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Imagem para Texto</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Conversor de Imagem Para Texto</h1>
+    <input type="file" id="imageUpload" accept="image/*">
+    <div id="result"></div>
+    <script>
+        document.getElementById('imageUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            Tesseract.recognize(
+                file,
+                'por', // Idioma (português)
+                { logger: m => console.log(m) }
+            ).then(({ data: { text } }) => {
+                document.getElementById('result').innerText = text;
+            });
+        });
+    </script>
+</body>
+    <footer>
+    <h2>Criado por Rafael Silva</h2>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/rafasonnedev/" target="_blank">
+        <img src="icone_instagram.png" alt="Instagram" />
+      </a>
+    </div>
+    </footer>
+</html>
